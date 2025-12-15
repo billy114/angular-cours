@@ -1,0 +1,74 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col">
+      <h2>🔗 Data Binding dans Angular</h2>
+      <p>Le <strong>data binding</strong> permet de lier les données de la classe TypeScript (composant) à la vue HTML. Cela facilite la synchronisation entre la logique métier et l’interface utilisateur.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="card mb-4 shadow">
+        <div class="card-header bg-light h5 py-3">
+          1. Interpolation
+        </div>
+        <div class="card-body">
+          <p>Mon nom est <strong>{{name}}</strong></p>
+          <p>Mon email est <strong>{{getEmail()}}</strong> </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card mb-4 shadow">
+        <div class="card-header bg-light h5 py-3">
+          2. Property Binding
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <p>Exemple avec un lien</p>
+            <a [href]="bootstrapLink"> lien bootstrap</a>
+          </div>
+          <div>
+            <p>Example avec une images</p>
+            <img [src]="getImageUrl()" alt="image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card mb-4 shadow">
+        <div class="card-header bg-light h5 py-3">
+          3. Event Binding
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <p>Exemple avec (click)</p>
+            <button class="btn btn-primary" (click)="onClick()">valider</button>
+          </div>
+         <div>
+           <p> Exemple avec <strong>(keyUp)</strong></p>
+           <input type="text" (keyup)="onKeyUp($event)" >
+         </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card mb-4 shadow">
+        <div class="card-header bg-light h5 py-3">
+          4. Two-Way Binding
+        </div>
+        <div class="card-body">
+          <input type="text" [(ngModel)]="test">
+          <p>la valeur de test est : <strong>{{test}}</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

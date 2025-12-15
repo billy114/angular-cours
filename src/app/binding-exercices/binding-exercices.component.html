@@ -1,0 +1,39 @@
+<div class="container py-4">
+  <div class="row">
+    <div class="col">
+      <h2>Binding Exercices</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Exercice 1</h5>
+        </div>
+        <div class="card-body">
+          <label class="mb-2">Prénom : </label>
+          <input type="text" class="form-control mb-3" [(ngModel)]="prenom">
+          <label class="mb-2">age : </label>
+          <input class="form-control" type="number" [(ngModel)]="age">
+          <p class="mt-3">Bonjour <strong> {{prenom}}</strong> , vous avez  <strong> {{age}} </strong> ans</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Exercice 2</h5>
+        </div>
+        <div class="card-body">
+          <label class="mb-2">email : </label>
+          <input type="text" class="form-control mb-3" [(ngModel)]="email">
+
+          <button class="btn btn-primary" (click)="onClick()"> valider</button>
+          <p class="mt-3">Votre email est  <strong> {{email2}}</strong></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
