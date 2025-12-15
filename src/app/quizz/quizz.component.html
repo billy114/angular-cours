@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row mb-3">
+    question : {{question}}
+  </div>
+  <div class="alert alert-secondary">{{message}}</div>
+  <div class="row mb-3">
+    <div class="col-6">
+      <button class="btn btn-secondary" (click)="onClick(answers[0])" [disabled]="disabled">{{answers[0]}}</button>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-secondary"  (click)="onClick(answers[1])" [disabled]="disabled">{{ answers[1] }}</button>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-6">
+      <button class="btn btn-secondary" (click)="onClick(answers[2])" [disabled]="disabled">{{ answers [2] }}</button>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-secondary" (click)="onClick(answers[3])" [disabled]="disabled">{{ answers[3] }}</button>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-warning" (click)="reset()">Reset</button>
+  </div>
+</div>

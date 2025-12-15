@@ -4,7 +4,7 @@
       <h2>Binding Exercices</h2>
     </div>
   </div>
-  <div class="row">
+  <div class="row mb-4">
     <div class="col-6">
       <div class="card">
         <div class="card-header">
@@ -36,4 +36,38 @@
     </div>
 
   </div>
+
+  <div class="row mb-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h5>Exercice 3</h5>
+        </div>
+        <div class="card-body">
+
+          <input type="number" [(ngModel)]="numberA">
+          <span> + </span>
+          <input type="number" [(ngModel)]="numberB">
+          <span> = </span>
+          <span> {{numberA + numberB}} </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h5>Exercice 4 : quizz</h5>
+        </div>
+        <div class="card-body">
+          <app-quizz></app-quizz>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>

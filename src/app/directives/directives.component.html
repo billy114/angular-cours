@@ -1,0 +1,83 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col">
+      <h2>LEs directives</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card mb-3">
+        <div class="card-header">
+          ngIf
+        </div>
+        <div class="card-body">
+          @if (cond) {
+            <div class="border rounded p-3">
+              cette div va être présente en fonction de la variable : condition
+            </div>
+          }
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">
+          ngSwich
+        </div>
+        <div class="card-body">
+          @switch (auth) {
+            @case ('admin') {
+              <p>vous ête l'admin</p>
+            }
+            @case ('user') {
+              <p>vous êtes user </p>
+            }
+            @default {
+              <p>on ne sait pas qui t'es</p>
+            }
+          }
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">
+          ngClass
+        </div>
+        <div class="card-body">
+          <p class="border rounded p-3"
+            [ngClass]=" {'text-primary' : false, 'text-danger' : true } "
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores consectetur dicta dignissimos ducimus eius, error est et explicabo optio perferendis rerum, tempora! Ab accusamus, excepturi harum hic molestiae veritatis.
+          </p>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-header">
+          ngStyle
+        </div>
+        <div class="card-body">
+          <p class="border rounded p-3"
+             [ngStyle]=" { color: isError ? 'red' : 'green' } "
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores consectetur dicta dignissimos ducimus eius, error est et explicabo optio perferendis rerum, tempora! Ab accusamus, excepturi harum hic molestiae veritatis.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          ngFor
+        </div>
+        <div class="card-body">
+          @for ( jour of jours; track $index) {
+            <p [ngClass]="{'text-success' : jour === 'samedi' || jour === 'dimanche'}"
+              class="p-3 rounded border mb-3">{{ jour }}</p>
+          }
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
