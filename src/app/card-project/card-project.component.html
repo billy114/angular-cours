@@ -1,0 +1,27 @@
+<div class="card shadow rounded-3" [style.width.px]="310">
+  <div class="card-header"> {{project.text}} </div>
+  <div class="card-body">
+    <p class="mb-1">{{project.subtext}}</p>
+    <div class="badge mb-2"
+
+         [ngClass]="{
+            'bg-danger' : project.status == 'Delay',
+            'bg-success' : project.status === 'Completed' ,
+            'bg-warning' : project.status === 'Pending'
+         }"
+
+         [class.bg-danger]="project.status === 'Delay'"
+         [class.bg-warning]="project.status === 'Pending'"
+         [class.bg-success]="project.status === 'Completed'"
+
+    >
+      {{ project.status}}
+    </div>
+    <ul>
+      @for (tech of project.technologies ; track tech) {
+        <li> {{tech}} </li>
+      }
+    </ul>
+  </div>
+
+</div>

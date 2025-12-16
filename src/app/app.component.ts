@@ -8,11 +8,13 @@ import {DataBindingComponent} from './data-binding/data-binding.component';
 import {BindingExercicesComponent} from './binding-exercices/binding-exercices.component';
 import {DirectivesComponent} from './directives/directives.component';
 import {DirectivesExercicesComponent} from './directives-exercices/directives-exercices.component';
+import {CardContactComponent} from './card-contact/card-contact.component';
+import {ParentComponent} from './parent/parent.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FirstComponentComponent, HeaderComponent, MainComponent, FooterComponent, DataBindingComponent, BindingExercicesComponent, DirectivesComponent, DirectivesExercicesComponent],
+  imports: [RouterOutlet, FirstComponentComponent, HeaderComponent, MainComponent, FooterComponent, DataBindingComponent, BindingExercicesComponent, DirectivesComponent, DirectivesExercicesComponent, CardContactComponent, ParentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

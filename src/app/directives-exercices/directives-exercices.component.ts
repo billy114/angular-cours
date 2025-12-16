@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import {NgClass} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {CardProjectComponent} from '../card-project/card-project.component';
 
 @Component({
   selector: 'app-directives-exercices',
   standalone: true,
   imports: [
     NgClass,
-    FormsModule
+    FormsModule,
+    CardProjectComponent
   ],
   templateUrl: './directives-exercices.component.html',
   styleUrl: './directives-exercices.component.scss'
@@ -101,6 +103,5 @@ export class DirectivesExercicesComponent {
       technologies: ['Spring Boot', 'Thymeleaf', 'PostgreSQL']
     }
   ];
-
 
 }
