@@ -16,9 +16,16 @@ import {CardProjectComponent} from '../card-project/card-project.component';
 })
 export class DirectivesExercicesComponent {
 
-  completed : boolean = false;
-  delay : boolean = false;
-  pending : boolean = false;
+  completed : boolean = true;
+  delay : boolean = true;
+  pending : boolean = true;
+
+  cpt : number = 0;
+
+  updateCpt (data : boolean){
+    if (data){ this.cpt ++}
+    this.cpt --
+  }
 
    projectData = [
     {

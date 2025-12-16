@@ -14,6 +14,7 @@
       <label class="me-2">Delay</label>
       <input type="checkbox" [(ngModel)]="delay">
 
+      <p>Le nombre de projets sélectionnés est : <strong>{{cpt}}</strong> </p>
       <div class="d-flex flex-wrap gap-3 mt-4">
        @for( project of projectData; track project.id) {
          @if (
@@ -21,7 +22,7 @@
              project.status === 'Pending' && pending ||
              project.status === 'Delay' && delay
            ){
-           <app-card-project [project] = project></app-card-project>
+           <app-card-project [project] = project (eventEmitter)="updateCpt($event)"></app-card-project>
          }
        }
       </div>
