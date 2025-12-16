@@ -7,11 +7,12 @@ import {FooterComponent} from './footer/footer.component';
 import {DataBindingComponent} from './data-binding/data-binding.component';
 import {BindingExercicesComponent} from './binding-exercices/binding-exercices.component';
 import {DirectivesComponent} from './directives/directives.component';
+import {DirectivesExercicesComponent} from './directives-exercices/directives-exercices.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FirstComponentComponent, HeaderComponent, MainComponent, FooterComponent, DataBindingComponent, BindingExercicesComponent, DirectivesComponent],
+  imports: [RouterOutlet, FirstComponentComponent, HeaderComponent, MainComponent, FooterComponent, DataBindingComponent, BindingExercicesComponent, DirectivesComponent, DirectivesExercicesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

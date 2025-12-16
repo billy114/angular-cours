@@ -1,0 +1,47 @@
+<div class="container py-4">
+  <div class="row">
+    <div class="col">
+      <h2>Les directives : exercices</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label class="me-2">Completed</label>
+      <input class="me-3" type="checkbox" [(ngModel)]="completed">
+      <label class="me-2">Pending</label>
+      <input class="me-3" type="checkbox" [(ngModel)]="pending">
+      <label class="me-2">Delay</label>
+      <input type="checkbox" [(ngModel)]="delay">
+
+      <div class="d-flex flex-wrap gap-3 mt-4">
+       @for( project of projectData; track project.id) {
+         @if (
+           project.status === 'Completed' && completed ||
+             project.status === 'Pending' && pending ||
+             project.status === 'Delay' && delay
+           ){
+           <div class="card shadow rounded-3" [style.width.px]="310">
+           <div class="card-header"> {{project.text}} </div>
+           <div class="card-body">
+             <p class="mb-1">{{project.subtext}}</p>
+             <div class="badge mb-2"
+                  [ngClass]="{'bg-danger' : project.status == 'Delay',
+             'bg-success' : project.status === 'Completed' ,
+              'bg-warning' : project.status === 'Pending' }">
+               {{ project.status}}
+             </div>
+             <ul>
+               @for (tech of project.technologies ; track tech) {
+                 <li> {{tech}} </li>
+               }
+             </ul>
+           </div>
+
+         </div>
+         }
+       }
+      </div>
+    </div>
+  </div>
+</div>
