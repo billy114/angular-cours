@@ -1,0 +1,14 @@
+<div class="container p-5">
+  @if (error) {
+    <p class="alert alert-danger"> {{error}} </p>
+  }
+  <form>
+    <label>Username</label>
+    <input type="text" class="form-control mb-3" #usernameInput>
+    <label>Password</label>
+    <input type="password" class="form-control mb-3" #passwordInput>
+    <button type="button" class="btn btn-success" (click)="login(usernameInput.value, passwordInput.value)">Login</button>
+  </form>
+
+
+</div>
