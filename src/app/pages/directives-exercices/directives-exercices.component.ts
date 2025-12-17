@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {NgClass} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {CardProjectComponent} from '../card-project/card-project.component';
+import {CardProjectComponent} from '../../card-project/card-project.component';
 
 @Component({
   selector: 'app-directives-exercices',
@@ -24,7 +24,7 @@ export class DirectivesExercicesComponent {
 
   updateCpt (data : boolean){
     if (data){ this.cpt ++}
-    this.cpt --
+    else {this.cpt --}
   }
 
    projectData = [

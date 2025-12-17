@@ -7,7 +7,7 @@ import {FooterComponent} from './footer/footer.component';
 import {DataBindingComponent} from './data-binding/data-binding.component';
 import {BindingExercicesComponent} from './binding-exercices/binding-exercices.component';
 import {DirectivesComponent} from './directives/directives.component';
-import {DirectivesExercicesComponent} from './directives-exercices/directives-exercices.component';
+import {DirectivesExercicesComponent} from './pages/directives-exercices/directives-exercices.component';
 import {CardContactComponent} from './card-contact/card-contact.component';
 import {ParentComponent} from './parent/parent.component';
 

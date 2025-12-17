@@ -13,15 +13,11 @@ import {FormsModule} from '@angular/forms';
   styleUrl: './card-project.component.scss'
 })
 export class CardProjectComponent {
-
-
+  
   @Input({required : true}) project : any = {}
   @Output() eventEmitter = new EventEmitter();
-  selected : boolean = false;
 
-  onChange () {
-     this.selected = !this.selected;
-     this.eventEmitter.emit(this.selected);
+  onChange (event : any) {
+     this.eventEmitter.emit(event.target.checked);
   }
-
 }

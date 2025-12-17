@@ -1,0 +1,19 @@
+<div class="container py-4">
+  <h2>Products</h2>
+  <div class="row">
+    <div class="col d-flex flex-wrap gap-3">
+      @for (product of products; track product.id){
+        <div class="card" [style.width.px]="300">
+          <div class="card-header">
+            <a [routerLink]="product.id+''">
+              {{product.title}}
+            </a>
+          </div>
+          <div class="card-body">
+            {{product.description}}
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
