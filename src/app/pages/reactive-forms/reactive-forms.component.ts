@@ -34,4 +34,15 @@ export class ReactiveFormsComponent {
     return this.password.value === this.confirmPassword.value
   }
 
+  addTechnoInput(){
+    this.technos.push(new FormControl ('', Validators.required));
+  }
+
+  removeInput(i : number) {
+    this.technos.removeAt(i)
+  }
+
+  onClick(){
+    console.log(this.technos.value)
+  }
 }

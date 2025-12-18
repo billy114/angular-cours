@@ -60,19 +60,25 @@
 
       <label>Technos</label>
       @for (techno of technos.controls; let i = $index; track i) {
-        <input
-          class="form-control w-50"
-          type="text"
-          [formControl]="techno"
-          [ngClass]="{'is-invalid' :  techno.touched && techno.invalid  }"
-        >
+        <div class="d-flex gap-2">
+          <input
+            class="form-control w-50 mb-3"
+            type="text"
+            [formControl]="techno"
+            [ngClass]="{'is-invalid' :  techno.touched && techno.invalid  }"
+          >
+          <button class="btn btn-danger m-2" (click)="removeInput(i)">remove</button>
+        </div>
         @if (techno.touched && techno.invalid ){
           @if (techno.hasError('required')) {
             <div class="invalid-feedback">ce champs est obligatoire</div>
           }
         }
       }
+      <button class="btn btn-success" (click)="addTechnoInput()">add techno</button>
 
     </div>
   </div>
+
+  <button class="btn btn-primary" (click)="onClick()">show value</button>
 </div>
