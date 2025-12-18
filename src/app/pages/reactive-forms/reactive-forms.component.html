@@ -1,0 +1,78 @@
+<div class="container py-4">
+  <h2>Reactive forms</h2>
+  <div class="row">
+    <div class="col">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        class="form-control w-50"
+        type="text"
+        [formControl]="name"
+        [ngClass]="{'is-invalid' :  name.touched && name.invalid  }"
+      >
+      @if (name.touched && name.invalid){
+        @if (name.hasError('required')) {
+          <div class="invalid-feedback">ce champs est obligatoire</div>
+        }
+        @if (name.hasError('minlength')) {
+          <div class="invalid-feedback">minimum 6 caractères</div>
+        }
+      }
+
+      <label for="password">Password</label>
+      <input
+        id="password"
+        class="form-control w-50"
+        type="password"
+        [formControl]="password"
+        [ngClass]="{'is-invalid' :  password.touched && password.invalid  }"
+      >
+      @if (password.touched && password.invalid){
+        @if (password.hasError('required')) {
+          <div class="invalid-feedback">ce champs est obligatoire</div>
+        }
+        @if (password.hasError('minlength')) {
+          <div class="invalid-feedback">minimum 8 caractères</div>
+        }
+        @if (password.hasError('pattern')) {
+          <div class="invalid-feedback">
+            Le mot de passe doit contenir un Majuscule, miniscule et un caractère spéciale
+          </div>
+        }
+      }
+
+      <label for="confirmPassword">Confirmation de Password</label>
+      <input
+        id="confirmPassword"
+        class="form-control w-50 mb-4"
+        type="password"
+        [formControl]="confirmPassword"
+        [ngClass]="{'is-invalid' :  confirmPassword.touched && (confirmPassword.invalid || !mustMatch()) }"
+      >
+      @if (confirmPassword.touched && (confirmPassword.invalid || !mustMatch())){
+        @if (confirmPassword.hasError('required')) {
+          <div class="invalid-feedback">ce champs est obligatoire</div>
+        }
+       @if (!mustMatch()) {
+         <div class="invalid-feedback">Les deux mot de passes doivent être identiques</div>
+       }
+      }
+
+      <label>Technos</label>
+      @for (techno of technos.controls; let i = $index; track i) {
+        <input
+          class="form-control w-50"
+          type="text"
+          [formControl]="techno"
+          [ngClass]="{'is-invalid' :  techno.touched && techno.invalid  }"
+        >
+        @if (techno.touched && techno.invalid ){
+          @if (techno.hasError('required')) {
+            <div class="invalid-feedback">ce champs est obligatoire</div>
+          }
+        }
+      }
+
+    </div>
+  </div>
+</div>

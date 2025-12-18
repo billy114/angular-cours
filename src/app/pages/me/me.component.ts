@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../core/services/api/auth.service';
 import {Router} from '@angular/router';
+import {LocalStorageService} from '../../core/services/local-storage.service';
 
 @Component({
   selector: 'app-me',
@@ -15,18 +16,26 @@ export class MeComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
+    private localStorageService : LocalStorageService
   ) { }
 
   ngOnInit() {
     this.authService.getMe().subscribe({
-      next: data => {this.me = data},
+      next: data => {
+        this.me = data;
+      },
       error: error => {
         if (error.status === 401) {
           alert('Not logged in');
-          this.router.navigate(['/login']);
         }
       }
     });
+  }
+
+  logout() {
+    this.localStorageService.setLoggedIn(false);
+    this.localStorageService.setAccessToken('');
+    this.router.navigate(['login']);
   }
 
 }

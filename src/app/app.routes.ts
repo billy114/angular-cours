@@ -7,6 +7,8 @@ import {ProductsComponent} from './pages/products/products.component';
 import {ProductComponent} from './pages/product/product.component';
 import {LoginComponent} from './pages/login/login.component';
 import {MeComponent} from './pages/me/me.component';
+import {authGuard} from './core/guards/auth.guard';
+import {ReactiveFormsComponent} from './pages/reactive-forms/reactive-forms.component';
 
 export const routes: Routes = [
   {path : '' , component: HomeComponent},
@@ -16,6 +18,7 @@ export const routes: Routes = [
   {path : 'products', component : ProductsComponent},
   {path : 'products/:id', component : ProductComponent},
   {path : 'login', component : LoginComponent},
-  {path : 'me', component : MeComponent},
+  {path : 'me', component : MeComponent, canActivate : [authGuard] },
+  {path : 'reactive-forme', component : ReactiveFormsComponent },
 
 ];
